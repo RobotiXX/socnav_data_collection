@@ -10,3 +10,12 @@
 [submodule "ros2_ws/src/ugv_sdk"]
 	path = ros2_ws/src/ugv_sdk
 	url = https://github.com/westonrobot/ugv_sdk.git
+[submodule "ros2_ws/src/velodyne"]
+	path = ros2_ws/src/velodyne
+	url = https://github.com/ros-drivers/velodyne.git
+[submodule "ros2_ws/src/witmotion_ros"]
+	path = ros2_ws/src/witmotion_ros
+	url = https://github.com/daeunSong/witmotion_IMU_ros.git
+[submodule "ros2_ws/src/zed-ros2-wrapper"]
+	path = ros2_ws/src/zed-ros2-wrapper
+	url = https://github.com/stereolabs/zed-ros2-wrapper.git
