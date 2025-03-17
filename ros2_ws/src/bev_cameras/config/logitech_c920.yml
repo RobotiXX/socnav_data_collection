@@ -28,7 +28,6 @@ camera_name: logitech_c920            # ROS internal name for the camera, used t
 camera_frame_id: logitech_c920        # Frame ID used to generate coordinate transformations
 camera_transport_suffix: image_raw  # Suffix used by image_transport to generate topic names
 camera_info_url: ""                 # URI for camera calibration data (likely a YML file obtained from camera_calibration)
-# Supported resolution: 2880x1440 (stitched 360-degree cylindrical), 1920x1080 (tiled view front/rear)
 image_width: 1920                  # Frame dimensions, should be supported by camera hardware
 image_height: 1080
 framerate: 30                       # Camera polling frequency, Hz (integer)
