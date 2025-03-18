@@ -32,13 +32,16 @@ sudo apt upgrade
 
 sudo apt install ros-humble-desktop
 sudo apt install ros-dev-tools
-source /opt/ros/humble/setup.bash
-echo "source /opt/ros/humble/setup.bash" >> $HOME/.bashrc
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+sudo rosdep init
+rosdep update
 
 # Install dependencies
 sudo apt-get install libqt5serialport5-dev # for witmotion IMU
 sudo apt-get install build-essential git cmake libasio-dev can-utils # for Scout ugv_sdk
-
+sudo pip install evdev
 
 # Copy udev rules 
 cd $HOME/socnav_data_collection
@@ -51,3 +54,15 @@ python3 setup.py install --prefix ~/.local
 # sudo cp udev/50-ds4drv.rules /etc/udev/rules.d/ # already did this
 sudo udevadm control --reload-rules
 sudo udevadm trigger
+
+# For ZED ROS 2 Wrapper
+cd $HOME/socnav_data_collection/ros2_ws/
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release --parallel-workers $(nproc)
+echo source $(pwd)/install/_setup.bash >> ~/.bashrc
+
+echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+echo "export _colcon_cd_root=/opt/ros/humble/" >> ~/.bashrc
+echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
+
+source ~/.bashrc
