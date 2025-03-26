@@ -1,0 +1,26 @@
+image_width: 1920
+image_height: 1080
+camera_name: dell_wb3023
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1383.42105,    0.     ,  988.09316,
+            0.     , 1395.74667,  555.73582,
+            0.     ,    0.     ,    1.     ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.085728, -0.105061, -0.000975, 0.005558, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1405.10828,    0.     ,  998.93395,    0.     ,
+            0.     , 1426.35229,  554.29571,    0.     ,
+            0.     ,    0.     ,    1.     ,    0.     ]

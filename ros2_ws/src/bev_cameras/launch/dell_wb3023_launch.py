@@ -42,8 +42,35 @@ def generate_launch_description():
         )
         for camera in CAMERAS
     ]
+    image_proc_nodes = [
+        Node(
+            package='image_transport',
+            executable='republish',
+            name=f'republish_to_raw_dell_wb3023',
+            arguments=[
+                'compressed', 'raw',
+                '--ros-args',
+                '-r', 'in/compressed:=/dell_wb3023/image_raw/compressed',
+                '-r', 'out:=/dell_wb3023/republished_image_raw'
+            ]
+        ),
+        Node(
+            package='image_proc', executable='rectify_node',
+            name='rectify_node',
+            remappings=[
+                ('image', '/dell_wb3023/republished_image_raw'),
+                ('camera_info', '/dell_wb3023/camera_info'),
+                ('image_rect', '/dell_wb3023/image_rect')
+            ],
+            parameters=[{
+                "queue_size": 5,
+                "image_transport": "compressed",
+                "interpolation": 1}
+            ]
+        )
+    ]
 
-    camera_group = GroupAction(camera_nodes)
+    camera_group = GroupAction(camera_nodes + image_proc_nodes)
 
     ld.add_action(camera_group)
     return ld

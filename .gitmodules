@@ -22,3 +22,6 @@
 [submodule "ros2_ws/src/usb_cam"]
 	path = ros2_ws/src/usb_cam
 	url = https://github.com/nhatleminh1997/usb_cam.git
+[submodule "ros2_ws/src/apriltag_ros"]
+	path = ros2_ws/src/apriltag_ros
+	url = https://github.com/christianrauch/apriltag_ros.git
