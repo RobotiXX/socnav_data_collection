@@ -19,3 +19,6 @@
 [submodule "ros2_ws/src/zed-ros2-wrapper"]
 	path = ros2_ws/src/zed-ros2-wrapper
 	url = https://github.com/stereolabs/zed-ros2-wrapper.git
+[submodule "ros2_ws/src/usb_cam"]
+	path = ros2_ws/src/usb_cam
+	url = https://github.com/nhatleminh1997/usb_cam.git
