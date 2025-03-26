@@ -6,7 +6,7 @@
 	url = https://github.com/RobotiXX/ds4_driver.git
 [submodule "ros2_ws/src/scout_ros2"]
 	path = ros2_ws/src/scout_ros2
-	url = https://github.com/agilexrobotics/scout_ros2.git
+	url = https://github.com/westonrobot/scout_ros2.git
 [submodule "ros2_ws/src/ugv_sdk"]
 	path = ros2_ws/src/ugv_sdk
 	url = https://github.com/westonrobot/ugv_sdk.git
