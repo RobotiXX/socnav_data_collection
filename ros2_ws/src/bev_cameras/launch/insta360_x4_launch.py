@@ -16,8 +16,8 @@ from launch_ros.actions import Node  # noqa: E402
 CAMERAS = []
 CAMERAS.append(
     CameraConfig(
-        name='logitech_c920',
-        param_path=Path(get_package_share_directory('bev_cameras'), 'config', 'logitech_c920.yaml')
+        name='insta360_x4',
+        param_path=Path(get_package_share_directory('bev_cameras'), 'config', 'insta360_x4.yaml')
     )
     # Add more Camera's here and they will automatically be launched below
 )
@@ -26,7 +26,7 @@ CAMERAS.append(
 def generate_launch_description():
     ld = LaunchDescription()
 
-    parser = argparse.ArgumentParser(description='usb_cam logitech_c920')
+    parser = argparse.ArgumentParser(description='insta360_x4')
     parser.add_argument('-n', '--node-name', dest='node_name', type=str,
                         help='name for device', default='usb_cam')
 

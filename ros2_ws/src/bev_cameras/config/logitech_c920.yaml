@@ -5,8 +5,7 @@
       io_method: "mmap"
       frame_id: "logitech_c920_1"
       pixel_format: "mjpeg2rgb"
-      color_format: "yuv422p"
-      # av_device_format: "YUV420P"
+      av_device_format: "YUV422P"
       image_width: 1920
       image_height: 1080
       camera_name: "logitech_c920_1"

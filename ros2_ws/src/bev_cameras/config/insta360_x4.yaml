@@ -3,14 +3,12 @@
       video_device: "/dev/video2"
       framerate: 30.0
       io_method: "mmap"
-      frame_id: "dell_wb3023"
+      frame_id: "insta360_x4"
       pixel_format: "mjpeg2rgb"
-      av_device_format: "YUV422P"
-      # supported 2560x1440, 1920x1080
-      image_width: 2560
+      av_device_format: "YUV420P"
+      image_width: 2880
       image_height: 1440
-      camera_name: "dell_wb3023"
-      # reusing same camera intrinsics only for demo, should really be unique for camera2"
+      camera_name: "insta360_x4"
       # camera_info_url: "package://usb_cam/config/camera_info.yaml"
       brightness: -1
       contrast: -1
