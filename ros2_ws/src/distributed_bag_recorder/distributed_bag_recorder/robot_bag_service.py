@@ -14,7 +14,7 @@ class RobotBagService(Node):
 
     def start_recording(self, request, response):
         timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-        bag_path = f'/nvidia/home/ssd/bags/{timestamp}'
+        bag_path = f'/home/nvidia/ssd/bags/{timestamp}'
         os.makedirs(bag_path, exist_ok=True)
         topics = [
             '/joy',
