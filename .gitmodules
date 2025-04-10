@@ -27,3 +27,5 @@
 	url = https://github.com/christianrauch/apriltag_ros.git
 [submodule "./zed-ros2-wrapper"]
 	url = git@github.com:RobotiXX/zed-ros2-wrapper.git
+[submodule "zed-ros2-wrapper"]
+	url = git@github.com:RobotiXX/zed-ros2-wrapper.git
