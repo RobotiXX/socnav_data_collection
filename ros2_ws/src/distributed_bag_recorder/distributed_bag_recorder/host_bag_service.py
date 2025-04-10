@@ -22,7 +22,7 @@ class HostBagService(Node):
             '/logitech_c920/image_raw/compressed',
             '/logitech_c920/camera_info',
         ]
-        os.makedirs(bag_path, exist_ok=True)
+        # os.makedirs(bag_path, exist_ok=True)
 
         self.recording_process = subprocess.Popen(['ros2', 'bag', 'record', '-o', bag_path, '--max-cache-size', '104857600'] + topics)
         self.get_logger().info(f"Started host bag recording to {bag_path}")

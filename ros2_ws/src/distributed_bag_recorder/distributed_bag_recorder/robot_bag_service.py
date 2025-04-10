@@ -8,14 +8,14 @@ import os
 class RobotBagService(Node):
     def __init__(self):
         super().__init__('robot_bag_service')
-        self.create_service(Empty, 'start_recording', self.start_recording)
-        self.create_service(Empty, 'stop_recording', self.stop_recording)
+        self.create_service(Empty, '/robot/start_recording', self.start_recording)
+        self.create_service(Empty, '/robot/stop_recording', self.stop_recording)
         self.recording_process = None
 
     def start_recording(self, request, response):
         timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
         bag_path = f'/home/nvidia/ssd/bags/{timestamp}'
-        os.makedirs(bag_path, exist_ok=True)
+        # os.makedirs(bag_path, exist_ok=True)
         topics = [
             '/joy',
             '/odom',
