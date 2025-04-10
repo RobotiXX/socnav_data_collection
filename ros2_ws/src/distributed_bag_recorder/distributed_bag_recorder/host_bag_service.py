@@ -23,7 +23,7 @@ class HostBagService(Node):
             '/logitech_c920/camera_info',
         ]
 
-        self.recording_process = subprocess.Popen(['ros2', 'bag', 'record', '-o', bag_path] + topics)
+        self.recording_process = subprocess.Popen(['ros2', 'bag', 'record', '-o', bag_path, '--max-cache-size', '104857600'] + topics)
         self.get_logger().info(f"Started host bag recording to {bag_path}")
 
         while not self.robot_start_cli.wait_for_service(timeout_sec=1.0):

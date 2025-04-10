@@ -15,11 +15,26 @@ class RobotBagService(Node):
         timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
         bag_path = f'/nvidia/home/ssd/bags/{timestamp}'
         topics = [
-            '/insta360_x4/image_raw/compressed',
+            '/joy',
+            '/odom',
+            '/cmd_vel',
+            '/zed2/zed_node/rgb/camera_info',
             '/zed2/zed_node/rgb/image_rect_color/compressed',
+            '/velodyne_points',
+            '/witmotion_imu/imu',
+            '/trajectory_marking',
+            '/sync_command',
+            '/tf',
+            '/tf_static',
+            '/zed2/zed_node/right/camera_info',
+            '/zed2/zed_node/right/image_rect_color/compressed',
+            '/insta360_x4/camera_info',
+            '/insta360_x4/image_raw/compressed'
         ]
 
-        self.recording_process = subprocess.Popen(['ros2', 'bag', 'record', '-o', bag_path] + topics)
+        self.recording_process = subprocess.Popen(
+            ['ros2', 'bag', 'record', '-o', bag_path, '--max-cache-size', '104857600'] + topics
+        )
         self.get_logger().info(f"Started robot bag recording to {bag_path}")
         return response
 
