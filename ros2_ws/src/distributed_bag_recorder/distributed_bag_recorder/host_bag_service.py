@@ -3,7 +3,7 @@ from rclpy.node import Node
 from std_srvs.srv import Empty
 import subprocess
 from datetime import datetime
-
+import os
 class HostBagService(Node):
     def __init__(self):
         super().__init__('host_bag_service')
@@ -22,6 +22,7 @@ class HostBagService(Node):
             '/logitech_c920/image_raw/compressed',
             '/logitech_c920/camera_info',
         ]
+        os.makedirs(bag_path, exist_ok=True)
 
         self.recording_process = subprocess.Popen(['ros2', 'bag', 'record', '-o', bag_path, '--max-cache-size', '104857600'] + topics)
         self.get_logger().info(f"Started host bag recording to {bag_path}")
