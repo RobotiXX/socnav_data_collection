@@ -17,7 +17,7 @@ class HostBagService(Node):
 
     def start_recording(self, request, response):
         timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-        bag_path = f'/home/scout/bags/{timestamp}'
+        bag_path = f'/home/scout/bags/{timestamp}_bev'
         topics = [
             '/logitech_c920/image_raw/compressed',
             '/logitech_c920/camera_info',
